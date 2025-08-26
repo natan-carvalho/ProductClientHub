@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using ProductClientHub.Communication.Requests;
+using ProductClientHub.Communication.Responses;
 
 namespace ProductClientHub.API.Controllers;
 
@@ -7,9 +9,10 @@ namespace ProductClientHub.API.Controllers;
 public class ClientsController : ControllerBase
 {
   [HttpPost]
-  public IActionResult Register()
+  [ProducesResponseType(typeof(ResponseClientJson), StatusCodes.Status201Created)]
+  public IActionResult Register([FromBody] RequestClientJson request)
   {
-    return Ok();
+    return Created();
   }
 
   [HttpPut]

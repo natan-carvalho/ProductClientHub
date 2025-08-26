@@ -35,3 +35,4 @@
 /src/ProductClientHub/ProductClientHub.API/obj/Debug/net8.0/ProductClientHub.API.pdb
 /src/ProductClientHub/ProductClientHub.API/obj/Debug/net8.0/ProductClientHub.API.genruntimeconfig.cache
 /src/ProductClientHub/ProductClientHub.API/obj/Debug/net8.0/ref/ProductClientHub.API.dll
+/src/ProductClientHub/ProductClientHub.API/bin/Debug/net8.0/FluentValidation.dll

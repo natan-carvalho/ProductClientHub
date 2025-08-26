@@ -1,6 +1,11 @@
-@ProductClientHub.API_HostAddress = http://localhost:5128
+@baseURL = http://localhost:5128
 
-GET {{ProductClientHub.API_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{baseURL}}/api/clients
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": ""
+}
 
 ###

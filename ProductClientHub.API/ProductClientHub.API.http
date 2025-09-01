@@ -4,8 +4,8 @@ POST {{baseURL}}/api/clients
 Content-Type: application/json
 
 {
-  "name": "",
-  "email": ""
+  "name": "natan",
+  "email": "natan@tese.com"
 }
 
 ###

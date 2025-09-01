@@ -8,8 +8,7 @@ public class ProductClientHubDbContext : DbContext
   public DbSet<Client> Clients { get; set; } = default!;
   public DbSet<Product> Products { get; set; } = default!;
 
-  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+  public ProductClientHubDbContext(DbContextOptions<ProductClientHubDbContext> options) : base(options)
   {
-    optionsBuilder.UseSqlite("Data Source=/src/ProductClientHub/ProductClientHubDB.db");
   }
 }

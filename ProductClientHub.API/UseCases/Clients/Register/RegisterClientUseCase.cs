@@ -8,20 +8,28 @@ namespace ProductClientHub.API.UseCases.Clients.Register;
 
 public class RegisterClientUseCase
 {
+  private readonly ProductClientHubDbContext _dbContext;
+
+
+
+  public RegisterClientUseCase(ProductClientHubDbContext dbContext)
+  {
+    _dbContext = dbContext;
+  }
+
   public ResponseClientJson Execute(RequestClientJson request)
   {
     Validate(request);
 
-    var dbContext = new ProductClientHubDbContext();
     var entity = new Client
     {
       Name = request.Name,
       Email = request.Email
     };
 
-    dbContext.Clients.Add(entity);
+    _dbContext.Clients.Add(entity);
 
-    dbContext.SaveChanges();
+    _dbContext.SaveChanges();
 
     return new ResponseClientJson
     {

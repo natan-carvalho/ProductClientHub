@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProductClientHub.API.Filters;
 using ProductClientHub.API.Infrastructure;
+using ProductClientHub.API.UseCases.Clients.Register;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
+builder.Services.AddScoped<RegisterClientUseCase, RegisterClientUseCase>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionFilter))); // adding filters

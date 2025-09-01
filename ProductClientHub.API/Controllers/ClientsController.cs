@@ -11,11 +11,11 @@ namespace ProductClientHub.API.Controllers;
 [ApiController]
 public class ClientsController : ControllerBase
 {
-  private readonly ProductClientHubDbContext _dbContext;
+  private readonly RegisterClientUseCase _registerUseCase;
 
-  public ClientsController(ProductClientHubDbContext dbContext)
+  public ClientsController(RegisterClientUseCase registerUseCase)
   {
-    _dbContext = dbContext;
+    _registerUseCase = registerUseCase;
   }
 
   [HttpPost]
@@ -23,8 +23,7 @@ public class ClientsController : ControllerBase
   [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status400BadRequest)]
   public IActionResult Register([FromBody] RequestClientJson request)
   {
-    var useCase = new RegisterClientUseCase(_dbContext);
-    var response = useCase.Execute(request);
+    var response = _registerUseCase.Execute(request);
     return Created(string.Empty, response);
   }
 

@@ -10,6 +10,6 @@ public class ProductClientHubDbContext : DbContext
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
-    optionsBuilder.UseSqlite("Data Source=../../ProductClientHubDB.db");
+    optionsBuilder.UseSqlite("Data Source=/src/ProductClientHub/ProductClientHubDB.db");
   }
 }

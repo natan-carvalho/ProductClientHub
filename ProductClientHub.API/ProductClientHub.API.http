@@ -9,3 +9,13 @@ Content-Type: application/json
 }
 
 ###
+GET {{baseURL}}/api/clients
+###
+
+PUT {{baseURL}}/api/clients/517b5f09-e67e-411b-90d4-589398c6fbf0
+Content-Type: application/json
+
+{
+  "name": "natan updated",
+  "email": "natan@santos.com"
+}

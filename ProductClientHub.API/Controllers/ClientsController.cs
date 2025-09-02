@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ProductClientHub.API.Infrastructure;
 using ProductClientHub.API.UseCases.Clients.Register;
 using ProductClientHub.Communication.Requests;
 using ProductClientHub.Communication.Responses;
-using ProductClientHub.Exceptions.ExceptionsBase;
 
 namespace ProductClientHub.API.Controllers;
 

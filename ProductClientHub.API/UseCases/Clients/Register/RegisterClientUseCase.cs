@@ -10,8 +10,6 @@ public class RegisterClientUseCase
 {
   private readonly ProductClientHubDbContext _dbContext;
 
-
-
   public RegisterClientUseCase(ProductClientHubDbContext dbContext)
   {
     _dbContext = dbContext;

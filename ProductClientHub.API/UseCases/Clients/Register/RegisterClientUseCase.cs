@@ -6,16 +6,11 @@ using ProductClientHub.Exceptions.ExceptionsBase;
 
 namespace ProductClientHub.API.UseCases.Clients.Register;
 
-public class RegisterClientUseCase
+public class RegisterClientUseCase(ProductClientHubDbContext dbContext)
 {
-  private readonly ProductClientHubDbContext _dbContext;
+  private readonly ProductClientHubDbContext _dbContext = dbContext;
 
-  public RegisterClientUseCase(ProductClientHubDbContext dbContext)
-  {
-    _dbContext = dbContext;
-  }
-
-  public ResponseClientJson Execute(RequestClientJson request)
+  public ResponseShortClientJson Execute(RequestClientJson request)
   {
     Validate(request);
 
@@ -29,7 +24,7 @@ public class RegisterClientUseCase
 
     _dbContext.SaveChanges();
 
-    return new ResponseClientJson
+    return new ResponseShortClientJson
     {
       Id = entity.Id,
       Name = entity.Name,

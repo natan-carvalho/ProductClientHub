@@ -4,6 +4,7 @@ using ProductClientHub.API.Infrastructure;
 using ProductClientHub.API.UseCases.Clients.GetAll;
 using ProductClientHub.API.UseCases.Clients.Register;
 using ProductClientHub.API.UseCases.Clients.Update;
+using ProductClientHub.API.UseCases.Products.Register;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<RegisterClientUseCase, RegisterClientUseCase>();
 builder.Services.AddScoped<GetAllClientsUseCase, GetAllClientsUseCase>();
 builder.Services.AddScoped<UpdateClientUseCase, UpdateClientUseCase>();
+
+builder.Services.AddScoped<RegisterProductUseCase, RegisterProductUseCase>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionFilter))); // adding filters

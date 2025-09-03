@@ -1,5 +1,7 @@
 @baseURL = http://localhost:5128
 
+###
+# @name createClient
 POST {{baseURL}}/api/clients
 Content-Type: application/json
 
@@ -7,15 +9,27 @@ Content-Type: application/json
   "name": "natan",
   "email": "natan@tese.com"
 }
-
+###
+@clientId = {{createClient.response.body.id}}
 ###
 GET {{baseURL}}/api/clients
 ###
 
-PUT {{baseURL}}/api/clients/517b5f09-e67e-411b-90d4-589398c6fbf0
+PUT {{baseURL}}/api/clients/{{clientId}}
 Content-Type: application/json
 
 {
   "name": "natan updated",
   "email": "natan@santos.com"
+}
+
+###
+# @name createProoduct
+POST {{baseURL}}/api/products/{{clientId}}
+Content-Type: application/json
+
+{
+  "name": "caneta",
+  "brand": "Bic",
+  "price": 2
 }

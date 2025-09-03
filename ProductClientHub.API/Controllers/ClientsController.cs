@@ -27,6 +27,7 @@ public class ClientsController(RegisterClientUseCase registerUseCase, GetAllClie
   [HttpPut]
   [Route("{id}")]
   [ProducesResponseType(StatusCodes.Status204NoContent)]
+  [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status400BadRequest)]
   [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status404NotFound)]
   public IActionResult Update([FromRoute] Guid id, [FromBody] RequestClientJson request)
   {

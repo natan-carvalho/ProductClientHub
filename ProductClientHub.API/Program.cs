@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using ProductClientHub.API.Filters;
 using ProductClientHub.API.Infrastructure;
+using ProductClientHub.API.UseCases.Clients.Delete;
 using ProductClientHub.API.UseCases.Clients.GetAll;
+using ProductClientHub.API.UseCases.Clients.GetById;
 using ProductClientHub.API.UseCases.Clients.Register;
 using ProductClientHub.API.UseCases.Clients.Update;
 using ProductClientHub.API.UseCases.Products.Delete;
@@ -16,6 +18,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<RegisterClientUseCase, RegisterClientUseCase>();
 builder.Services.AddScoped<GetAllClientsUseCase, GetAllClientsUseCase>();
 builder.Services.AddScoped<UpdateClientUseCase, UpdateClientUseCase>();
+builder.Services.AddScoped<DeleteClientUseCase, DeleteClientUseCase>();
+builder.Services.AddScoped<GetClientByIdUseCase, GetClientByIdUseCase>();
 
 builder.Services.AddScoped<RegisterProductUseCase, RegisterProductUseCase>();
 builder.Services.AddScoped<DeleteProductUseCase, DeleteProductUseCase>();

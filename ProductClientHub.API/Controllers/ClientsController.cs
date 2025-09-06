@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductClientHub.API.UseCases.Clients.Delete;
 using ProductClientHub.API.UseCases.Clients.GetAll;
+using ProductClientHub.API.UseCases.Clients.GetById;
 using ProductClientHub.API.UseCases.Clients.Register;
 using ProductClientHub.API.UseCases.Clients.Update;
 using ProductClientHub.Communication.Requests;
@@ -10,12 +11,13 @@ namespace ProductClientHub.API.Controllers;
 
 [Route("api/clients")]
 [ApiController]
-public class ClientsController(RegisterClientUseCase registerUseCase, GetAllClientsUseCase getAllClientsUseCase, UpdateClientUseCase updateClientUseCase, DeleteClientUseCase deleteClientUseCase) : ControllerBase
+public class ClientsController(RegisterClientUseCase registerUseCase, GetAllClientsUseCase getAllClientsUseCase, UpdateClientUseCase updateClientUseCase, DeleteClientUseCase deleteClientUseCase, GetClientByIdUseCase getClientByIdUseCase) : ControllerBase
 {
   private readonly RegisterClientUseCase _registerUseCase = registerUseCase;
   private readonly GetAllClientsUseCase _getAllClientsUseCase = getAllClientsUseCase;
   private readonly UpdateClientUseCase _updateClientUseCase = updateClientUseCase;
   private readonly DeleteClientUseCase _deleteClientUseCase = deleteClientUseCase;
+  private readonly GetClientByIdUseCase _getClientByIdUseCase = getClientByIdUseCase;
 
   [HttpPost]
   [ProducesResponseType(typeof(ResponseShortClientJson), StatusCodes.Status201Created)]
@@ -54,9 +56,12 @@ public class ClientsController(RegisterClientUseCase registerUseCase, GetAllClie
 
   [HttpGet]
   [Route("{id}")]
-  public IActionResult GetById(Guid id)
+  [ProducesResponseType(typeof(ResponseClientJson), StatusCodes.Status200OK)]
+  [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status404NotFound)]
+  public IActionResult GetById([FromRoute] Guid id)
   {
-    return Ok();
+    var response = _getClientByIdUseCase.Execute(id);
+    return Ok(response);
   }
 
   [HttpDelete]

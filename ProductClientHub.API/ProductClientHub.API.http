@@ -28,7 +28,7 @@ Content-Type: application/json
 DELETE {{baseURL}}/api/clients/{{clientId}}
 
 ###
-# @name createProoduct
+# @name createProduct
 POST {{baseURL}}/api/products/{{clientId}}
 Content-Type: application/json
 

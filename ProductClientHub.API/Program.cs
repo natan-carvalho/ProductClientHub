@@ -27,7 +27,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionFilter))); // adding filters
 builder.Services.AddDbContext<ProductClientHubDbContext>(options =>
-  options.UseSqlite(connectionString));
+  options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 

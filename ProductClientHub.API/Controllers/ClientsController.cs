@@ -9,7 +9,7 @@ using ProductClientHub.Communication.Responses;
 
 namespace ProductClientHub.API.Controllers;
 
-[Route("api/clients")]
+[Route("/clients")]
 [ApiController]
 public class ClientsController(RegisterClientUseCase registerUseCase, GetAllClientsUseCase getAllClientsUseCase, UpdateClientUseCase updateClientUseCase, DeleteClientUseCase deleteClientUseCase, GetClientByIdUseCase getClientByIdUseCase) : ControllerBase
 {

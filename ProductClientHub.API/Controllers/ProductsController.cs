@@ -6,7 +6,7 @@ using ProductClientHub.Communication.Responses;
 
 namespace ProductClientHub.API.Controllers
 {
-  [Route("api/products")]
+  [Route("/products")]
   [ApiController]
   public class ProductsController(RegisterProductUseCase registerProductUseCase, DeleteProductUseCase deleteProductUseCase) : ControllerBase
   {

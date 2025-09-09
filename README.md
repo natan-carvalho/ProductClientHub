@@ -122,6 +122,16 @@ Resposta esperada:
 
 ---
 
+## 🌐 Aplicação Publicada
+
+A aplicação está disponível publicamente na plataforma **Render**:
+
+🔗 [https://productclienthub.onrender.com/health](https://productclienthub.onrender.com/health)
+
+Você pode acessar o endpoint de health check para verificar se a API está online.
+
+---
+
 ## 🧰 Requisitos
 
 - .NET 8 SDK
@@ -150,16 +160,6 @@ ProductClientHub/
 ├── Dockerfile
 ├── ProductClientHub.sln
 ```
-
----
-
-## 🌐 Aplicação Publicada
-
-A aplicação está disponível publicamente na plataforma **Render**:
-
-🔗 [https://productclienthub.onrender.com/health](https://productclienthub.onrender.com/health)
-
-Você pode acessar o endpoint de health check para verificar se a API está online.
 
 ---
 

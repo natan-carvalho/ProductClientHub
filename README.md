@@ -153,6 +153,16 @@ ProductClientHub/
 
 ---
 
+## 🌐 Aplicação Publicada
+
+A aplicação está disponível publicamente na plataforma **Render**:
+
+🔗 [https://productclienthub.onrender.com/health](https://productclienthub.onrender.com/health)
+
+Você pode acessar o endpoint de health check para verificar se a API está online.
+
+---
+
 ## 💡 Observações
 
 - Para rodar localmente, configure o banco de dados PostgreSQL e ajuste a string de conexão.

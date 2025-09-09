@@ -34,24 +34,21 @@ O **ProductClientHub** é uma aplicação ASP.NET Core estruturada em múltiplas
 
 ---
 
-## 🐳 Dockerização
 
-A aplicação pode ser facilmente executada em containers Docker. O arquivo `Dockerfile` já está configurado para:
+## 🐳 Imagem Docker Oficial
 
-- 🏗️ Build e publish da aplicação em ambiente de produção.
-- 🐳 Uso das imagens oficiais do .NET 8.
-- 🌐 Exposição da porta 80 para acesso HTTP.
+Uma imagem pronta do projeto está disponível no Docker Hub:
 
-**Comandos principais:**
+[![Docker Pulls](https://img.shields.io/docker/pulls/1natan1/product-client-hub?style=flat-square)](https://hub.docker.com/r/1natan1/product-client-hub)
+
+**URL:** [https://hub.docker.com/r/1natan1/product-client-hub](https://hub.docker.com/r/1natan1/product-client-hub)
+
+Para utilizar diretamente:
 
 ```bash
-# Build da imagem
-docker build -t product-client-hub .
-
-# Rodar o container
-docker run -p 80:80 product-client-hub
+docker pull 1natan1/product-client-hub
+docker run -p 80:80 1natan1/product-client-hub
 ```
-
 ---
 
 ## 🛢️ Conexão com Banco de Dados
